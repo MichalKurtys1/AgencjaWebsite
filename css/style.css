@@ -1,0 +1,338 @@
+/* font-family: 'Roboto', sans-serif; */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 200vh;
+    overflow-x: hidden;
+}
+
+/* Logo i jego animacja */
+
+.container {
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: #232323;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .box {
+    width: 60vw;
+    height: 20vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.box .title {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+}
+
+.title .block {
+    width: 0%;
+    height: inherit;
+    background: #ffb510;
+    position: absolute;
+    animation: mainBlock 2s cubic-bezier(.74, .06, .4, .92) forwards;
+    display: flex;
+}
+
+.box .role {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    margin-top: -10px;
+}
+
+.role .block {
+    width: 0%;
+    height: inherit;
+    background: #e91e63;
+    position: absolute;
+    animation: secBlock 2s 2s cubic-bezier(.74, .06, .4, .92) forwards;
+    display: flex;
+}
+
+.title h1 {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-size: 36px;
+    animation: mainFadeIn 5s 1.6s forwards;
+    opacity: 0;
+    display: flex;
+    align-items: baseline;
+    position: relative;
+}
+
+.role p {
+    animation: secFadeIn 3s 3.2s forwards;
+    opacity: 0;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+@keyframes mainBlock {
+    0% {
+        width: 0%;
+        left: 0;
+
+    }
+
+    50% {
+        width: 100%;
+        left: 0;
+
+    }
+
+    100% {
+        width: 0;
+        left: 101%;
+    }
+}
+
+@keyframes secBlock {
+    0% {
+        width: 0%;
+        left: 0;
+
+    }
+
+    50% {
+        width: 100%;
+        left: 0;
+
+    }
+
+    100% {
+        width: 0;
+        left: 101%;
+    }
+}
+
+@keyframes mainFadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes secFadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Nav */
+
+nav.mainNav {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    animation: showUp 0.5s 4.4s linear both;
+    top: -55px;
+    right: 0;
+    width: 100%;
+}
+
+nav.mainNav ul {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+nav.mainNav li {
+    list-style: none;
+    padding: 10px;
+}
+
+nav.mainNav i.active {
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1;
+    color: black;
+}
+
+nav.mainNav i.fa-x.inactive {
+    display: none;
+}
+
+nav.mainNav i.fa-x.active {
+    display: block;
+    color: white;
+    position: fixed;
+    z-index: 2;
+    top: 20px;
+    right: 20px;
+}
+
+nav.mainNav i.inactive {
+    display: none;
+}
+
+nav.mainNav h1 {
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    font-size: 26px;
+}
+
+@keyframes showUp {
+    100% {
+        top: 0;
+    }
+}
+
+/* menu boczne*/
+
+.menu.active {
+    position: fixed;
+    display: block;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: black;
+    opacity: 0.92;
+}
+
+.menu.active nav.menuNav {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu.active nav.menuNav li {
+    list-style: none;
+}
+
+.menu.inactive {
+    position: absolute;
+    left: 110vw;
+}
+
+.menu.inactive li {
+    list-style: none;
+    display: none;
+}
+
+.menu.active nav.menuNav li a {
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-size: 32px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Header */
+
+header {
+    height: 100vh;
+}
+
+header .img {
+    position: relative;
+    background-image: url(/img/ccity.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 66%;
+    top: -100%;
+    left: 0;
+    animation: ImgShow 1s 4.4s linear both;
+}
+
+header .slogan {
+    position: relative;
+    background-color: #1A1A1D;
+    font-family: 'Roboto', sans-serif;
+    top: 0;
+    left: 100%;
+    animation: SloganShow 0.5s 4.4s linear both;
+}
+
+header .slogan h1 {
+    font-size: 40px;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 2px;
+    text-align: center;
+    padding: 10px;
+    color: white;
+}
+
+header .slogan p {
+    text-align: justify;
+    font-family: 'Oswald', sans-serif;
+    padding: 20px;
+    color: white;
+}
+
+.devider {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 60%;
+    left: 0;
+    border-bottom: 50px solid #1A1A1D;
+    border-left: 100vw solid transparent;
+    left: 100%;
+    animation: SloganShow 0.5s 4.4s linear both;
+}
+
+.devider:nth-child(2) {
+    top: 57%;
+    border-bottom: 65px solid #4E4E50;
+    border-left: 100vw solid transparent;
+}
+
+@keyframes ImgShow {
+    100% {
+        top: 0;
+    }
+}
+
+@keyframes SloganShow {
+    100% {
+        left: 0;
+    }
+}
