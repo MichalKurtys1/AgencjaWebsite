@@ -1,3 +1,6 @@
+
+// Menu
+
 const bntB = document.querySelector('.bnt');
 const bntX = document.querySelector('.fa-x');
 const menu = document.querySelector('.menu');
@@ -19,6 +22,8 @@ bntX.addEventListener('click', function(){
     bntB.classList.toggle('inactive');
     bntB.classList.toggle('active');
 });
+
+// about wysuwanie contentu
 
 const img1 = document.getElementById("img1");
 const content1 = document.getElementById("content1");
@@ -77,3 +82,34 @@ function rotation() {
         });
     } 
 }
+
+// Animation
+
+$(document).on('scroll', function(){
+    const windowHeight = $(window).height();
+    const scrollVal = $(this).scrollTop();
+    
+    const $bntChoose = $('.chooseBnt');
+    const bntChooseFromTop = $bntChoose.offset().top;
+    const bntChooseHeight = $bntChoose.height();
+
+    if(scrollVal > bntChooseFromTop + bntChooseHeight - windowHeight) {
+        $bntChoose.addClass('active');
+    }
+
+    const $bntOffer = $('.bntOffer');
+    const bntOfferFromTop = $bntOffer.offset().top;
+    const bntOfferHeight = $bntOffer.height();
+
+    if(scrollVal > bntOfferFromTop + bntOfferHeight - windowHeight) {
+        $bntOffer.addClass('active');
+    }
+
+    const $about = $('.about');
+    const aboutFromTop = $about.offset().top;
+    const aboutHeight = $about.height();
+
+    if(scrollVal > aboutFromTop + aboutHeight - windowHeight) {
+        $about.addClass('active');
+    }
+});
