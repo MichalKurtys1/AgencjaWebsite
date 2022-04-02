@@ -9,6 +9,7 @@
 body {
     height: 200vh;
     overflow-x: hidden;
+    background-color: #1A1A1D;
 }
 
 /* Logo i jego animacja */
@@ -18,7 +19,6 @@ body {
     position: absolute;
     width: 100%;
     height: 100vh;
-    background-color: #232323;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,8 +41,8 @@ body {
     justify-content: center;
     height: 50px;
 }
-
-.title .block {
+/* .box dodane */
+.box .title .block {
     width: 0%;
     height: inherit;
     background: #ffb510;
@@ -69,8 +69,8 @@ body {
     animation: secBlock 2s 2s cubic-bezier(.74, .06, .4, .92) forwards;
     display: flex;
 }
-
-.title h1 {
+/* .box dodane */
+.box .title h1 {
     font-family: 'Roboto', sans-serif;
     color: white;
     font-size: 36px;
@@ -204,12 +204,6 @@ nav.mainNav i.inactive {
     display: none;
 }
 
-nav.mainNav h1 {
-    font-family: 'Roboto', sans-serif;
-    color: black;
-    font-size: 26px;
-}
-
 @keyframes showUp {
     100% {
         top: 0;
@@ -239,7 +233,9 @@ nav.mainNav h1 {
     align-items: center;
     justify-content: center;
 }
-
+.menu.active nav.menuNav ul {
+    width: 80%;
+}
 .menu.active nav.menuNav li {
     list-style: none;
 }
@@ -254,85 +250,358 @@ nav.mainNav h1 {
     display: none;
 }
 
-.menu.active nav.menuNav li a {
-    padding: 10px;
-    display: block;
+.menu.active nav.menuNav a{
     text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+.menu.active nav.menuNav li a h2{
+    padding: 10px;
     color: white;
-    font-size: 32px;
+    font-size: 28px;
     font-family: 'Roboto', sans-serif;
 }
 
+
+.menu.active nav.menuNav li i {
+    color: white;
+    flex-basis: 20%;
+    font-size: 20px;
+    padding-right: 10px;
+    line-height: 32px;
+}
 /* Header */
 
-header {
+.header {
     height: 100vh;
 }
 
-header .img {
+.header .img {
     position: relative;
-    background-image: url(/img/ccity.jpg);
+    background-image: url(/img/cityview.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    height: 66%;
-    top: -100%;
-    left: 0;
-    animation: ImgShow 1s 4.4s linear both;
+    height: 60vh;
 }
 
-header .slogan {
+.header .slogan {
     position: relative;
-    background-color: #1A1A1D;
     font-family: 'Roboto', sans-serif;
+    height: 40vh;
     top: 0;
-    left: 100%;
-    animation: SloganShow 0.5s 4.4s linear both;
+    left: 0;
 }
 
-header .slogan h1 {
-    font-size: 40px;
+.header .slogan h1 {
     font-family: 'Oswald', sans-serif;
-    letter-spacing: 2px;
+    color: white;
     text-align: center;
+    font-size: 40px;
+    letter-spacing: 2px;
     padding: 10px;
-    color: white;
+    
 }
 
-header .slogan p {
-    text-align: justify;
+.header .slogan p {
     font-family: 'Oswald', sans-serif;
-    padding: 20px;
     color: white;
+    text-align: justify;
+    padding: 20px;
 }
 
 .devider {
+    position: absolute;
     width: 0;
     height: 0;
-    position: absolute;
-    top: 60%;
+    top: 53%;
     left: 0;
     border-bottom: 50px solid #1A1A1D;
     border-left: 100vw solid transparent;
-    left: 100%;
-    animation: SloganShow 0.5s 4.4s linear both;
 }
 
 .devider:nth-child(2) {
-    top: 57%;
+    top: 50%;
+    left: 0;
     border-bottom: 65px solid #4E4E50;
     border-left: 100vw solid transparent;
 }
 
-@keyframes ImgShow {
-    100% {
-        top: 0;
-    }
+/* Wybór */
+
+.choose {
+    height: 60vh;
 }
 
-@keyframes SloganShow {
-    100% {
-        left: 0;
-    }
+.choose h1 {
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    font-family: 'Oswald', sans-serif;
+    padding: 20px;
+}
+
+.choose .chooseBnt {
+    display: block;
+    border: none;
+    height: 8vh;
+    width: 70vw;
+    margin: 30px auto;
+}
+
+.choose .chooseBnt a {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100%;
+    text-decoration: none;
+}
+
+.choose .chooseBnt i {
+    display: block;
+    border-right: 3px solid #1A1A1D;
+    flex-basis: 25%;
+    line-height: 8vh;
+    font-size: 20px;
+    color: #1A1A1D;
+}
+
+.choose .chooseBnt h2 {
+    flex-basis: 75%;
+    line-height: 8vh;
+    font-size: 20px;
+    color: #1A1A1D;
+}
+
+/* Najnowsze oferty */
+
+.newOffers {
+    height: 80vh;
+    width: 100%;
+    background-color: white;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.newOffers h1 {
+    text-align: center;
+    color: #1A1A1D;
+    font-size: 40px;
+    font-family: 'Oswald', sans-serif;
+    padding: 20px;
+
+}
+
+.newOffers .wrap {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+.newOffers .offer {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    margin: 0 10vw;
+}
+
+.newOffers .wrap div.offer:nth-child(1) {
+    left: 0;
+}
+
+.newOffers .wrap div.offer:nth-child(2) {
+    left: 100vw;
+}
+
+.newOffers .wrap div.offer:nth-child(3) {
+    left: 200vw;
+}
+
+.newOffers .wrap div.offer:nth-child(4) {
+    left: 300vw;
+}
+
+.newOffers .wrap div.offer:nth-child(5) {
+    left: 400vw;
+}
+
+.newOffers .wrap div.offer:nth-child(6) {
+    left: 500vw;
+}
+
+.newOffers .offer img {
+    width: 80vw;
+    height: 25vh;
+    object-fit: cover;
+}
+
+.newOffers .offer .content {
+    width: 80vw;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #1A1A1D;
+    font-family: 'Oswald', sans-serif;
+    color: white;
+}
+
+.newOffers .offer h2 {
+    padding: 10px 10px 0;
+    font-size: 25px;
+}
+
+.newOffers .offer h3 {
+    padding: 0 10px;
+    font-size: 14px;
+}
+
+.newOffers button {
+    display: block;
+    border: none;
+    margin: 0 auto;
+    height: 23%;
+    width: 60%;
+    background-color: #1A1A1D;
+    border: 2px solid white;
+}
+
+.newOffers a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.newOffers .offer h4 {
+    font-size: 16px;
+    border-right: 2px solid #fff;
+    padding-right: 10px;
+}
+
+.newOffers .offer h4:nth-last-of-type(1) {
+    padding-left: 30px;
+    border: none;
+}
+
+.newOffers .icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0 10px 10px;
+}
+
+.newOffers .offer i {
+    font-size: 20px;
+}
+
+.newOffers .arrow {
+    position: absolute;
+    font-size: 30px;
+    opacity: 0.5;
+    padding: 10px;
+}
+
+.newOffers .left {
+    top: 45%;
+    left: 0x;
+}
+
+.newOffers .right {
+    top: 45%;
+    right: 0;
+}
+
+/* Sekcja o nas(trzeba nazwy pozmieniać) i id="img1" */
+
+.aboutUs {
+    background-color: #1A1A1D;
+}
+
+.aboutUs .wrap {
+    padding-bottom: 10px;
+}
+
+.aboutUs .wrap h1 {
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    font-family: 'Oswald', sans-serif;
+    padding: 20px;
+}
+
+.aboutUs .title {
+    position: relative;
+    height: 30vh;
+    width: 80vw;
+    margin: 0 auto;
+    background-color: black;
+}
+.aboutUs .title img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+}
+.aboutUs .title h1{
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 30px;
+}
+
+.aboutUs .content {
+    display: none;
+    height: 30vh;
+    width: 80vw;
+    margin: 0 auto;
+    background-color: #4E4E50;
+    margin-bottom: 0;
+    transition: 1s;
+}
+
+.aboutUs .content.active {
+    display: block;
+}
+
+.aboutUs .about{
+    margin-bottom: 50px;
+}
+
+.aboutUs .content h1 {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-size: 30px;
+    padding: 10px;
+}
+
+.aboutUs .content p {
+    text-align: justify;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-size: 15px;
+    padding: 20px;
+}
+
+/* Stopka */
+
+footer {
+    background-color: #4E4E50;
+    padding: 10px 0;
+}
+
+footer h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    padding: 5px;
 }
