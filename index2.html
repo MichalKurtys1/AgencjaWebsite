@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M & K Holdings\Buy/Rent</title>
+    <link rel="stylesheet" href="/css/style2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1ff9afa040.js" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+</head>
+<body>
+    <nav class="mainNav">
+        <ul>
+            <li><h1>M & K Holdings</h1></li>
+            <li><i class="fa-solid fa-bars bnt active" id="bnt"></i><i class="fa-solid fa-x inactive"></i></li>
+        </ul>
+    </nav>
+    <div class="menu inactive">
+        <nav class="menuNav">
+            <ul>
+                <li><a href="#"><i class="fa-solid fa-cart-shopping"></i><h2>Kupno</h2></a></li>
+                <li><a href="#"><i class="fa-solid fa-house"></i><h2>Wynajem</h2></a></li>
+                <li><a href="#"><i class="fa-solid fa-dollar-sign"></i><h2>Sprzedarz</h2></a></li>
+                <li><a href="#"><i class="fa-solid fa-people-group"></i><h2>O nas</h2></a></li>
+                <li><a href="#"><i class="fa-solid fa-phone"></i><h2>Kontakt</h2></a></li>
+            </ul>
+        </nav>
+    </div>
+    <header>
+        <img src="/img/header2.jpg" alt="">
+        <h1>Place for you</h1>
+    </header>
+    <section class="search">
+        <form class="searchForm" action="#">
+            <input type="text" placeholder="Wpisz adres...">
+            <div class="buttons">
+                <button class="searchBnt" id="filtrShow"><i class="fa-solid fa-filter"></i></button>
+                <button type="submit" class="searchBnt"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+
+        </form>
+    </section>
+    <section class="filter inactive">
+        <div class="wrap">
+            <button class="filterBnt"><h2>Cena</h2><i class="fa-solid fa-caret-right"></i></button>
+            <div class="inputs">
+                <input class="price inactive" type="number" placeholder="Od...">
+                <input class="price inactive" type="number" placeholder="Do...">
+            </div>
+        </div>
+        <div class="wrap">
+            <button class="filterBnt roomNumber"><h2>Ilość pokoi</h2><i class="fa-solid fa-caret-right"></i></button>
+            <div class="inputs">
+                <input class="roomNumber inactive" type="number" placeholder="&#xf7d8;" style="font-family:Arial, FontAwesome" />
+                <input class="roomNumber inactive" type="number" placeholder="&#xf236;" style="font-family:Arial, FontAwesome" />
+                <input class="roomNumber inactive" type="number" placeholder="&#xf517;" style="font-family:Arial, FontAwesome" />
+            </div>
+        </div>
+        <div class="wrap">
+            <button class="filterBnt flatType"><h2>Typ mieszkania</h2><i class="fa-solid fa-caret-right"></i></button>
+            <div class="inputs">
+                <input class="flatType inactive" type="text" placeholder="Typ..">
+            </div>
+        </div>
+    </section>
+    <section class="results">
+        <div class="offer">
+            <img src="/img/house1.jpg" alt="">
+            <div class="content">
+                <div class="description">
+                    <h2>Dom jednorodzinny</h2>
+                    <h3>ul. Kaliskiego 2, Bydgoszcz</h3>
+                </div>
+                <button class="bntOffer"><a href="#">Pokaż szczegóły</a></button>
+                <div class="icons">
+                    <i class="fa-solid fa-bed"></i>
+                    <h4>3</h4>
+                    <i class="fa-solid fa-toilet"></i>
+                    <h4>2</h4>
+                    <i class="fa-solid fa-kitchen-set"></i>
+                    <h4>1</h4>
+                    <h4>220000zł</h4>
+                </div>
+            </div>
+        </div>
+        <div class="offer">
+            <img src="/img/house2.jpg" alt="">
+            <div class="content">
+                <div class="description">
+                    <h2>Dom jednorodzinny</h2>
+                    <h3>ul. Kaliskiego 2, Bydgoszcz</h3>
+                </div>
+                <button class="bntOffer"><a href="#">Pokaż szczegóły</a></button>
+                <div class="icons">
+                    <i class="fa-solid fa-bed"></i>
+                    <h4>3</h4>
+                    <i class="fa-solid fa-toilet"></i>
+                    <h4>2</h4>
+                    <i class="fa-solid fa-kitchen-set"></i>
+                    <h4>1</h4>
+                    <h4>220000zł</h4>
+                </div>
+            </div>
+        </div>
+        <div class="offer">
+            <img src="/img/house3.jpg" alt="">
+            <div class="content">
+                <div class="description">
+                    <h2>Dom jednorodzinny</h2>
+                    <h3>ul. Kaliskiego 2, Bydgoszcz</h3>
+                </div>
+                <button class="bntOffer"><a href="#">Pokaż szczegóły</a></button>
+                <div class="icons">
+                    <i class="fa-solid fa-bed"></i>
+                    <h4>3</h4>
+                    <i class="fa-solid fa-toilet"></i>
+                    <h4>2</h4>
+                    <i class="fa-solid fa-kitchen-set"></i>
+                    <h4>1</h4>
+                    <h4>220000zł</h4>
+                </div>
+            </div>
+        </div>
+        <button class="showMoreBnt">Pokaż więcej</button>
+    </section>
+    <footer>
+        <h2>Michał Kurtys</h2>
+        <h2>michal-kurtys@wp.pl</h2>
+        <h2>516562040</h2>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/js/code2.js"></script>
+</body>
+</html>

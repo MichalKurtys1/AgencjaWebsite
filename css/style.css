@@ -11,14 +11,14 @@ body {
     background-color: #1A1A1D;
     animation: bodyFixed 5.8s;
 }
-@keyframes bodyFixed {
+/* @keyframes bodyFixed {
     0% {
         position: fixed;
     }
     100% {
         position: fixed;
     }
-}
+} */
 
 /* Logo i jego animacja */
 
@@ -227,13 +227,16 @@ nav.mainNav i.inactive {
     top: 0;
     right: 0;
     height: 100vh;
-    width: 250px;
+    width: 75vw;
     background-color: black;
     opacity: 0.92;
 }
 
 .menu.active nav.menuNav {
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
     width: 100%;
     height: 100%;
     display: flex;
@@ -325,9 +328,9 @@ nav.mainNav i.inactive {
     text-align: justify;
     padding: 20px;
 }
-.header .wrap {
+/* .header .wrap {
     position: relative;
-}
+} */
 .header .devider {
     position: absolute;
     width: 0;
@@ -336,12 +339,14 @@ nav.mainNav i.inactive {
     animation: showLeft 1s 4.8s linear both;
 }
 .header .devider.Down {
-    top: -18%;
+    /* top: -18%; */
+    bottom: -1%;
     border-bottom: 50px solid #1A1A1D;
     border-left: 100vw solid transparent;
 }
 .header .devider.Up {
-    top: -25%;
+    /* top: -25%; */
+    bottom: 0%;
     border-bottom: 65px solid #4E4E50;
     border-left: 100vw solid transparent;
 }
@@ -429,6 +434,7 @@ nav.mainNav i.inactive {
 .newOffers {
     height: 80vh;
     width: 100%;
+    margin: 0 auto;
     background-color: white;
     overflow-x: hidden;
     position: relative;
@@ -451,8 +457,9 @@ nav.mainNav i.inactive {
 
 .newOffers .offer {
     position: absolute;
+    display: flex;
+    flex-direction: column;
     top: 0;
-    width: 100%;
     margin: 0 10vw;
 }
 
@@ -484,11 +491,12 @@ nav.mainNav i.inactive {
     width: 80vw;
     height: 25vh;
     object-fit: cover;
+    margin-bottom: 3px;
 }
 
 .newOffers .offer .content {
     width: 80vw;
-    height: 30vh;
+    height: 35vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -499,12 +507,12 @@ nav.mainNav i.inactive {
 
 .newOffers .offer h2 {
     padding: 10px 10px 0;
-    font-size: 25px;
+    font-size: 30px;
 }
 
 .newOffers .offer h3 {
     padding: 0 10px;
-    font-size: 14px;
+    font-size: 20px;
 }
 
 .newOffers button {
@@ -549,7 +557,7 @@ nav.mainNav i.inactive {
 .newOffers a {
     text-decoration: none;
     color: white;
-    font-size: 16px;
+    font-size: 18px;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -603,7 +611,7 @@ nav.mainNav i.inactive {
     padding-bottom: 10px;
 }
 
-.aboutUs .wrap h1 {
+.aboutUs h1 {
     text-align: center;
     color: white;
     font-size: 40px;
@@ -653,7 +661,7 @@ nav.mainNav i.inactive {
 
 .aboutUs .content {
     display: none;
-    height: 30vh;
+    /* height: 30vh; */
     width: 80vw;
     margin: 0 auto;
     background-color: #4E4E50;
@@ -663,14 +671,6 @@ nav.mainNav i.inactive {
 
 .aboutUs .content.active {
     display: block;
-}
-
-.aboutUs .content h1 {
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-    color: white;
-    font-size: 30px;
-    padding: 10px;
 }
 
 .aboutUs .content p {
@@ -694,4 +694,800 @@ footer h1 {
     font-size: 16px;
     text-align: center;
     padding: 5px;
+}
+
+/* Responsywne na moblie/teblet do 1024px */
+
+@media (orientation: portrait) and (min-width: 280px) {
+    .choose {
+        height: 60vh;
+    }
+    .choose h1 {
+        text-align: center;
+        color: white;
+        font-size: 40px;
+        font-family: 'Oswald', sans-serif;
+        padding: 10px;
+    }
+
+    .newOffers {
+        height: 80vh;
+    }
+    
+    .newOffers h1 {
+        font-size: 35px;
+        padding: 20px;
+    
+    }
+    .newOffers .offer h2 {
+        font-size: 20px;
+    }
+    
+    .newOffers .offer h3 {
+        font-size: 16px;
+    }
+    .newOffers button {
+        height: 25%;
+        width: 75%;
+    }
+    .newOffers a {
+        font-size: 20px;
+    }
+    
+    .newOffers .offer h4 {
+        font-size: 16px;
+    }
+    
+    .newOffers .offer i {
+        font-size: 16px;
+    }
+}
+@media (orientation: portrait) and (min-width: 412px) {
+    nav.mainNav i.active {
+        font-size: 30px;
+    }
+    
+    .menu.active nav.menuNav li a h2{
+        padding: 10px;
+        font-size: 35px;
+    }
+    
+    
+    .menu.active nav.menuNav li i {
+        font-size: 25px;
+        padding-right: 10px;
+        line-height: 32px;
+    }
+
+
+    .header .slogan h1 {
+        font-size: 50px;
+        letter-spacing: 2px;
+        padding: 15px;
+        
+    }
+    
+    .header .slogan p {
+        font-size: 20px;
+        padding: 30px;
+    }
+
+    .choose .chooseBnt {
+        height: 8vh;
+        width: 80vw;
+    }
+
+    .choose .chooseBnt i {
+        line-height: 8vh;
+        font-size: 25px;
+    }
+    
+    .choose .chooseBnt h2 {
+        line-height: 8vh;
+        font-size: 25px;
+    }
+
+
+    .newOffers .offer h2 {
+        font-size: 35px;
+    }
+    
+    .newOffers .offer h3 {
+        font-size: 20px;
+    }
+    
+    .newOffers button {
+        height: 25%;
+        width: 70%;
+    }
+    .newOffers a {
+        font-size: 25px;
+    }
+    
+    .newOffers .offer h4 {
+        font-size: 20px;
+    }
+    
+    .newOffers .offer i {
+        font-size: 20px;
+    }
+
+
+
+    .aboutUs .title h1{
+        font-size: 40px;
+    }
+    
+    .aboutUs .content p {
+        font-size: 20px;
+        padding: 30px;
+    }
+    
+}
+@media (orientation: portrait) and (min-width: 540px) {
+    .menu.active nav.menuNav {
+        width: 80%;
+    }
+   
+
+    .choose .chooseBnt {
+        height: 8vh;
+        width: 60vw;
+    }
+
+
+    .newOffers .offer {
+        margin: 0 15vw;
+    }
+    .newOffers .offer img {
+        width: 70vw;
+        height: 25vh;
+    }
+    
+    .newOffers .offer .content {
+        width: 70vw;
+        height: 35vh;
+    }
+
+
+    .aboutUs .title {
+        height: 30vh;
+        width: 70vw;
+    }
+    
+    .aboutUs .content {
+        /* height: 30vh; */
+        width: 70vw;
+    }
+}
+@media (orientation: portrait) and (min-width: 768px) {
+    nav.mainNav i.active {
+        font-size: 40px;
+    }
+    
+    .menu.active nav.menuNav li a h2{
+        padding: 10px;
+        font-size: 50px;
+    }
+    
+    
+    .menu.active nav.menuNav li i {
+        font-size: 50px;
+        padding-right: 20px;
+        line-height: 32px;
+    }
+
+
+    .header .slogan h1 {
+        font-size: 70px;
+        letter-spacing: 2px;
+        padding: 20px;
+        
+    }
+    
+    .header .slogan p {
+        font-size: 30px;
+        padding: 30px;
+    }
+
+    .choose h1 {
+        font-size: 70px;
+        padding: 30px;
+    }
+
+    .choose .chooseBnt {
+        height: 8vh;
+        width: 70vw;
+    }
+
+    .choose .chooseBnt i {
+        line-height: 8vh;
+        font-size: 30px;
+        border-right: 4px solid #1A1A1D;
+    }
+    
+    .choose .chooseBnt h2 {
+        line-height: 8vh;
+        font-size: 30px;
+    }
+
+    .newOffers h1 {
+        font-size: 70px;
+        padding: 30px;
+    }
+    .newOffers .offer h2 {
+        font-size: 50px;
+        padding-left: 30px;
+    }
+    
+    .newOffers .offer h3 {
+        font-size: 30px;
+        padding-left: 30px;
+    }
+
+    .newOffers a {
+        font-size: 35px;
+    }
+    
+    .newOffers .offer h4 {
+        font-size: 30px;
+    }
+    
+    .newOffers .offer i {
+        font-size: 30px;
+    }
+    .newOffers .arrow {
+        font-size: 50px;
+        padding: 30px;
+    }
+
+    .aboutUs h1 {
+        font-size: 70px;
+        padding: 40px;
+    }
+    .aboutUs .title h1{
+        font-size: 60px;
+    }
+    
+    .aboutUs .content p {
+        font-size:30px;
+        padding: 30px;
+    }
+    footer h1 {
+        font-size: 30px;
+    }
+}      
+@media (orientation: portrait) and (min-width: 820px) {
+    nav.mainNav i.active {
+        font-size: 50px;
+    }
+    
+    .menu.active nav.menuNav li a h2{
+        padding: 10px;
+        font-size: 60px;
+    }
+    
+    
+    .menu.active nav.menuNav li i {
+        font-size: 60px;
+        padding-right: 20px;
+        line-height: 32px;
+    }
+    
+    
+    .header .slogan h1 {
+        font-size: 80px;
+        padding: 20px;
+        
+    }
+    .header .slogan p {
+        font-size: 38px;
+        padding: 30px;
+    }
+
+
+    .choose .chooseBnt i {
+        line-height: 8vh;
+        font-size: 40px;
+        border-right: 4px solid #1A1A1D;
+    } 
+    .choose .chooseBnt h2 {
+        line-height: 8vh;
+        font-size: 40px;
+    }
+
+    .newOffers .offer h2 {
+        font-size: 60px;
+        padding-left: 30px;
+    }
+    
+    .newOffers .offer h3 {
+        font-size: 40px;
+        padding-left: 30px;
+    }
+
+    .newOffers a {
+        font-size: 50px;
+    }
+    
+    .newOffers .offer h4 {
+        font-size: 35px;
+    }
+    
+    .newOffers .offer i {
+        font-size: 35px;
+    }
+
+    .aboutUs .content p {
+        font-size: 35px;
+    }
+}
+
+
+@media (orientation: landscape) and (min-width: 640px) {
+    .menu.active {
+        width: 40vw;
+    }
+    
+    
+    .header .slogan h1 {
+        font-size: 40px;
+        padding: 0;
+    }
+    
+    .header .slogan p {
+        font-size: 16px;
+        padding: 0 20px;
+        padding: 0 15vw;
+        text-align: center;
+    }
+    
+    .choose {
+        height: 85vh;
+    }
+    
+    .choose .chooseBnt {
+        height: 12vh;
+        width: 40vw;
+    }
+    .choose .chooseBnt h2{
+        line-height: 12vh;
+    }
+    .choose .chooseBnt i{
+        line-height: 12vh;
+    }
+
+
+    .newOffers .offer {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        top: 0;
+        margin: 0 15vw;
+    }
+    .newOffers {
+        height: 100vh;
+    }
+    .newOffers .offer img {
+        width: 30vw;
+        height: 55vh;
+        margin-right: 3px;
+    }
+    
+    .newOffers .offer .content {
+        width: 40vw;
+        height: 55vh;
+    }
+
+
+    .aboutUs .title {
+        height: 55vh;
+        width: 50vw;
+    }
+    
+    .aboutUs .content {
+        width: 50vw;
+    }
+}
+@media (orientation: landscape) and (min-width: 844px) {    
+    .header .slogan p {
+        font-size: 16px;
+        padding: 0 15vw;
+        text-align: center;
+    }
+    
+    .choose .chooseBnt {
+        width: 35vw;
+    }
+    .choose .chooseBnt h2{
+        line-height: 12vh;
+    }
+    .choose .chooseBnt i{
+        line-height: 12vh;
+    }
+
+
+    .aboutUs .title {
+        height: 55vh;
+        width: 40vw;
+    }
+    
+    .aboutUs .content {
+        width: 40vw;
+    }
+}
+@media (orientation: landscape) and (min-width: 1024px) {
+    nav.mainNav i.active {
+        font-size: 40px;
+    }
+    .menu.active {
+        width: 35vw;
+    }
+    .menu.active nav.menuNav {
+        width: 80%;
+    }
+    .menu.active nav.menuNav li a h2{
+        padding: 10px;
+        font-size: 40px;
+    }
+    
+    .menu.active nav.menuNav li i {
+        font-size: 40px;
+        padding-right: 20px;
+        line-height: 32px;
+    }
+
+
+
+    
+    .header .img {
+        height: 100vh;
+        width: 100vw;
+        object-fit: cover;
+    }
+    
+    .header .wrap {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background-color: black;
+        box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 1);
+        width: 50vw;
+        opacity: 0.9;
+    }
+    
+    .header .slogan h1 {
+        font-size: 50px;
+    }
+    
+    .header .slogan p {
+        font-size: 20px;
+        padding: 20px;
+    }
+
+    .choose h1 {
+        font-size: 60px;
+        padding: 30px;
+    }
+
+    .choose .chooseBnt {
+        width: 40vw;
+    }
+    .choose .chooseBnt i{
+        font-size: 40px;
+    }
+    .choose .chooseBnt h2{
+        font-size: 40px;
+    }
+
+
+    .newOffers {
+        height: 80vh;
+    }
+
+    .newOffers h1 {
+        font-size: 60px;
+    }
+    .newOffers .wrap {
+        margin-top: 50px;
+    }
+    .newOffers .offer {
+        margin: 0;
+    }
+
+    .newOffers .wrap div.offer:nth-child(1) {
+        left: 0;
+        margin-left: 3vw;
+    }
+    
+    .newOffers .wrap div.offer:nth-child(2) {
+        left: 47.5vw;
+        margin: 0 3vw;
+    }
+    
+    .newOffers .wrap div.offer:nth-child(3) {
+        left: 100vw;
+        margin-left: 3vw;
+    }
+    
+    .newOffers .wrap div.offer:nth-child(4) {
+        left: 147.5vw;
+        margin: 0 3vw;
+    }
+    
+    .newOffers .wrap div.offer:nth-child(5) {
+        left: 200vw;
+        margin-left: 3vw;
+    }
+    
+    .newOffers .wrap div.offer:nth-child(6) {
+        left: 247.5vw;
+        margin: 0 3vw;
+    }
+
+    .newOffers .offer img {
+        width: 20vw;
+        height: 45vh;
+    }
+    
+    .newOffers .offer .content {
+        width: 26vw;
+        height: 45vh;
+        display: flex;
+        flex-direction: column;
+    }
+    .newOffers .offer .description {
+        margin-top: 20px;
+    }
+
+    .newOffers .offer h2 {
+        font-size: 35px;
+        text-align: center;
+    }
+    
+    .newOffers .offer h3 {
+        font-size: 25px;
+        text-align: center;
+    }
+    
+    .newOffers button {
+        height: 20%;
+        width: 70%;
+        border: 3px solid white;
+    }
+
+    .newOffers a {
+        font-size: 22px;
+    }
+    
+    .newOffers .offer h4 {
+        font-size: 20px;
+        border-right: 2px solid #fff;
+        padding-right: 10px;
+    }
+    
+    .newOffers .offer h4:nth-last-of-type(1) {
+        padding-left: 30px;
+        border: none;
+    }
+    
+    .newOffers .icons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0 10px 10px;
+    }
+    
+    .newOffers .offer i {
+        font-size: 20px;
+    }
+    
+    .newOffers .left {
+        top: 55%;
+        left: 0;
+    }
+    
+    .newOffers .right {
+        top: 55%;
+        right: 0;
+    }
+
+
+
+
+
+    .aboutUs h1 {
+        font-size: 60px;
+    }
+    .aboutUs .wrap{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        height: 70vh;
+        align-items: center;
+    }
+    .aboutUs .title {
+        height: 35vh;
+        width: 30vw;
+    }
+    .aboutUs .title h1{
+        font-size: 40px;
+    }
+    .aboutUs .content {
+        width: 30vw;
+    }
+
+    .aboutUs .content p {
+        font-size: 20px;
+    }
+
+    footer h1{
+        font-size: 24px;
+    }
+}
+@media (orientation: landscape) and (min-width: 1024px) and (max-height: 700px){
+    nav.mainNav i.active {
+        font-size: 30px;
+    }
+    .menu.active {
+        width: 35vw;
+    }
+    .menu.active nav.menuNav {
+        width: 70%;
+    }
+    .menu.active nav.menuNav li a h2{
+        padding: 10px;
+        font-size: 30px;
+    }
+    
+    .menu.active nav.menuNav li i {
+        font-size: 30px;
+        padding-right: 20px;
+        line-height: 32px;
+    }
+    
+
+    
+    .header .slogan {
+        height: 45vh;
+    }
+    .header .slogan h1{
+        padding: 10px;
+    }
+
+    .choose {
+        height:90vh;
+    }
+    .choose .chooseBnt {
+        width: 40vw;
+        height: 14vh;
+    }
+    .choose .chooseBnt i{
+        line-height: 14vh;
+        font-size: 35px;
+    }
+    .choose .chooseBnt h2{
+        line-height: 14vh;
+        font-size: 35px;
+    }
+
+
+    .newOffers .offer h2 {
+        font-size: 25px;
+    }
+    
+    .newOffers .offer h3 {
+        font-size: 20px;
+    }
+    .newOffers .offer i {
+        font-size: 17px;
+    }
+    .newOffers .offer h4 {
+        font-size: 17px;
+    }
+
+    .newOffers .left {
+        top: 60%;
+        left: 0;
+    }
+    
+    .newOffers {
+        height: 90vh;
+    }
+    .newOffers .right {
+        top: 60%;
+        right: 0;
+    }
+
+
+
+    .aboutUs .wrap{
+        height: 80vh;
+    }
+}
+
+@media (min-width: 1200px) {
+    .header .slogan h1{
+        padding: 20px;
+    }
+    .header .slogan p{
+        font-size: 25px;
+    }
+
+    .choose .chooseBnt {
+        width: 35vw;
+    }
+
+    .aboutUs .content p {
+        font-size: 22px;
+    }
+}
+
+@media (min-width: 1600px) {
+
+    nav.mainNav i.active {
+        font-size: 50px;
+    }
+    .menu.active {
+        width: 35vw;
+    }
+    .menu.active nav.menuNav {
+        width: 70%;
+    }
+    .menu.active nav.menuNav li a h2{
+        padding: 10px;
+        font-size: 60px;
+    }
+    
+    .menu.active nav.menuNav li i {
+        font-size: 60px;
+        padding-right: 20px;
+        line-height: 32px;
+    }
+
+
+    .header .slogan h1{
+        font-size: 70px;
+    }
+    .header .slogan p{
+        font-size: 30px;
+    }
+
+    .choose h1 {
+        font-size: 80px;
+    }
+
+
+    .newOffers h1 {
+        font-size: 80px;
+    }
+    .newOffers .offer h2 {
+        font-size: 55px;
+    }
+    
+    .newOffers .offer h3 {
+        font-size: 35px;
+    }
+    .newOffers button a {
+        font-size: 35px;
+    }
+    .newOffers .offer i {
+        font-size: 30px;
+    }
+    .newOffers .offer h4 {
+        font-size: 30px;
+    }
+
+
+    .aboutUs h1 {
+        font-size: 80px;
+    }
+    .aboutUs .title h1 {
+        font-size: 60px;
+    }
+    .aboutUs .content p {
+        font-size: 30px;
+    }
 }

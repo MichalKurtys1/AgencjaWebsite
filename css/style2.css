@@ -1,0 +1,358 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100vw;
+}
+
+/* Nav główny */
+
+nav.mainNav {
+    background-color: #1A1A1D;
+    height: 50px;
+}
+nav.mainNav ul {
+    display: flex;
+    justify-content: space-between;
+}
+nav.mainNav li {
+    list-style: none;
+    color: white;
+    line-height: 50px;
+    padding: 0 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+}
+nav.mainNav i.active {
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1;
+    color: white;
+}
+
+nav.mainNav i.fa-x.inactive {
+    display: none;
+}
+
+nav.mainNav i.fa-x.active {
+    display: block;
+    color: white;
+    position: fixed;
+    z-index: 2;
+    top: 14px;
+    right: 14px;
+}
+
+nav.mainNav i.inactive {
+    display: none;
+}
+
+/* Menu wysówane */
+
+nav.menuNav {
+    flex-direction: row;
+}
+.menu.active {
+    position: fixed;
+    display: block;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 75vw;
+    background-color: black;
+    opacity: 0.92;
+}
+
+.menu.active nav.menuNav {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.menu.active nav.menuNav ul {
+    width: 80%;
+}
+.menu.active nav.menuNav li {
+    list-style: none;
+}
+
+.menu.inactive {
+    position: absolute;
+    left: 110vw;
+}
+
+.menu.inactive li {
+    list-style: none;
+    display: none;
+}
+
+.menu.active nav.menuNav a{
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+.menu.active nav.menuNav li a h2{
+    padding: 10px;
+    color: white;
+    font-size: 28px;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.menu.active nav.menuNav li i {
+    color: white;
+    flex-basis: 20%;
+    font-size: 20px;
+    padding-right: 10px;
+    line-height: 32px;
+}
+
+
+/* Header z zdjęciem */
+
+header {
+    position: relative;
+    width: 100%;
+    height: 40vh;
+    background-color: black;
+}
+header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+}
+header h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    text-align: center;
+    transform: translate(-50%,-50%);
+    font-family: 'Roboto', sans-serif;
+    font-size: 45px;
+    color: white;
+}
+
+/* Pasek z wyszukiwarką i filtrem */
+
+.search {
+    width: 100%;
+    height: 10vh;
+    background-color: #1a1a1d;
+}
+.search .searchForm {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.search .searchForm input {
+    background-color: #f1f1f6;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    margin-left: 8px;
+    border-radius: 8px;
+    flex-basis: 65%;
+    height: 6vh;
+    width: 70%;
+}
+.search .buttons {
+    width: 30%;
+}
+.searchBnt {
+    background-color: #f1f1f6;
+    border: none;
+    border-radius: 8px;
+    margin-right: 5px;
+    padding: 5px;
+    width: 6vh;
+    height: 6vh;
+}
+.searchBnt i {
+    font-size: 22px;
+}
+
+/* Flitr wysówany */
+
+.filter {
+    width: calc(100% - 10px);
+    height: 30vh;
+    background-color: #1a1a1d;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+}
+.filter .wrap {
+    flex-basis: 30%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.filter .filterBnt {
+    height: 80%;
+    flex-basis: 50%;
+    border: none;
+    border-radius: 8px;
+    margin: 0 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter .inputs {
+    flex-basis: 50%;
+    height: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.filter .filterBnt i {
+    font-size: 20px;
+    margin-right: 10px;
+}
+.filter .filterBnt h2 {
+    font-size: 20px;
+    margin-left: 5px;
+}
+.filter input {
+    height: 80%;
+    text-align: center;
+    border-radius: 8px;
+    border: none;
+}
+.filter input.price {
+    width: 40%;
+}
+.filter input.price:nth-of-type(2),
+.filter input.roomNumber:nth-of-type(3) {
+    margin-right: 5px;
+}
+.filter input.roomNumber {
+    width: 25%;
+}
+.filter input.flatType {
+    width: 90%;
+    margin-right: 5px;
+}
+.filter.inactive {
+    display: none;
+}
+
+
+
+/* Wyniki wyszukiwania/filtru */
+
+.results .offer {
+    width: 80vw;
+    margin: 30px auto;
+}
+.results .offer img {
+    width: 80vw;
+    height: 25vh;
+    object-fit: cover;
+    margin-bottom: 3px;
+}
+
+.results .offer .content {
+    width: 80vw;
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #1A1A1D;
+    font-family: 'Oswald', sans-serif;
+    color: white;
+}
+
+.results .offer h2 {
+    padding: 10px 10px 0;
+    font-size: 30px;
+}
+
+.results .offer h3 {
+    padding: 0 10px;
+    font-size: 20px;
+}
+
+.results button {
+    display: block;
+    border: none;
+    margin: 0 auto;
+    height: 23%;
+    width: 60%;
+    background-color: #1A1A1D;
+    border: 2px solid white;
+    transform: translateX(0);
+}
+.results a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.results .offer h4 {
+    font-size: 16px;
+    border-right: 2px solid #fff;
+    padding-right: 10px;
+}
+
+.results .offer h4:nth-last-of-type(1) {
+    padding-left: 30px;
+    border: none;
+}
+
+.results .icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0 10px 10px;
+}
+
+.results .offer i {
+    font-size: 20px;
+}
+.results .showMoreBnt {
+    color: white;
+    height: 9vh;
+    font-size: 22px;
+}
+
+
+/* Stopka */
+
+footer {
+    margin-top: 30px;
+    width: 100%;
+    background-color: #1a1a1d;
+    padding: 10px;
+}
+footer h2 {
+    font-family: 'Roboto',sans-serif;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    padding: 3px;
+}
