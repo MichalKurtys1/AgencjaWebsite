@@ -22,9 +22,9 @@
     <div class="menu inactive">
         <nav class="menuNav">
             <ul>
-                <li><a href="#"><i class="fa-solid fa-cart-shopping"></i><h2>Kupno</h2></a></li>
-                <li><a href="#"><i class="fa-solid fa-house"></i><h2>Wynajem</h2></a></li>
-                <li><a href="#"><i class="fa-solid fa-dollar-sign"></i><h2>Sprzedarz</h2></a></li>
+                <li><a href="/index.html"><i class="fa-solid fa-house"></i><h2>Strona główna</h2></a></li>
+                <li><a href="/index2.html"><i class="fa-solid fa-cart-shopping"></i><h2>Kupno / Wynajem</h2></a></li>
+                <li><a href="/index3.html"><i class="fa-solid fa-dollar-sign"></i><h2>Sprzedarz</h2></a></li>
                 <li><a href="#"><i class="fa-solid fa-people-group"></i><h2>O nas</h2></a></li>
                 <li><a href="#"><i class="fa-solid fa-phone"></i><h2>Kontakt</h2></a></li>
             </ul>
@@ -37,11 +37,8 @@
     <section class="search">
         <form class="searchForm" action="#">
             <input type="text" placeholder="Wpisz adres...">
-            <div class="buttons">
-                <button class="searchBnt" id="filtrShow"><i class="fa-solid fa-filter"></i></button>
-                <button type="submit" class="searchBnt"><i class="fa-solid fa-arrow-right"></i></button>
-            </div>
-
+            <button class="searchBnt" id="filtrShow"><i class="fa-solid fa-filter"></i></button>
+            <button type="submit" class="searchBnt"><i class="fa-solid fa-arrow-right"></i></button>
         </form>
     </section>
     <section class="filter inactive">
@@ -125,6 +122,25 @@
                 </div>
             </div>
         </div>
+        <div class="offer">
+            <img src="/img/house1.jpg" alt="">
+            <div class="content">
+                <div class="description">
+                    <h2>Dom jednorodzinny</h2>
+                    <h3>ul. Kaliskiego 2, Bydgoszcz</h3>
+                </div>
+                <button class="bntOffer"><a href="#">Pokaż szczegóły</a></button>
+                <div class="icons">
+                    <i class="fa-solid fa-bed"></i>
+                    <h4>3</h4>
+                    <i class="fa-solid fa-toilet"></i>
+                    <h4>2</h4>
+                    <i class="fa-solid fa-kitchen-set"></i>
+                    <h4>1</h4>
+                    <h4>220000zł</h4>
+                </div>
+            </div>
+        </div>
         <button class="showMoreBnt">Pokaż więcej</button>
     </section>
     <footer>
@@ -132,6 +148,7 @@
         <h2>michal-kurtys@wp.pl</h2>
         <h2>516562040</h2>
     </footer>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="/js/code2.js"></script>
 </body>

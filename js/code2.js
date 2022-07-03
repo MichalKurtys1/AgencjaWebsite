@@ -25,8 +25,8 @@ bntX.addEventListener('click', function(){
 // Filtr wyszuwanie
 const filtr = document.querySelector('.filter');
 const bntFiltr = document.getElementById('filtrShow');
-bntFiltr.addEventListener('click', () => {
-
+bntFiltr.addEventListener('click', (e) => {
+e.preventDefault();
 filtr.classList.toggle('inactive');
 
 });
